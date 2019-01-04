@@ -21,9 +21,6 @@ html {
     -webkit-text-size-adjust: 100%;
 }
 
-body {
-    margin: 0;
-}
 
 a:focus {
     outline: thin dotted;
@@ -189,9 +186,10 @@ body {
     --color-title: #fff;
     --color-shape: #1b1b1c;
     color: #fff;
-    color: var(--color-text);
+    margin: 0;
+    /*color: var(--color-text);*/
     background-color: #121212;
-    background-color: var(--color-bg);
+    /*background-color: var(--color-bg);*/
     font-family: Futura, "futura-pt", Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -206,6 +204,10 @@ body {
     --color-nav: #000;
     --color-title: #da1061;
     --color-shape: #e4e4e4;
+}
+
+.demo-1 {
+    background: #000000;
 }
 
 a {
@@ -305,10 +307,10 @@ a:focus {
     position: absolute;
     line-height: 1;
     color: var(--color-title);
-    -webkit-user-select:none;
-    -moz-user-select:none;
-    -ms-user-select:none;
-    user-select:none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .demo-1 .slide__title {
@@ -364,6 +366,7 @@ a:focus {
     opacity: 0;
     background-image: url(../images/noise1.png);
     position: absolute;
+    /*background: #000000;*/
     height: 300%;
     width: 300%;
     left: -100%;
@@ -485,7 +488,7 @@ a:focus {
     opacity: 1;
 }
 
-.nav_dot{
+.nav_dot {
     height: 40px;
     width: 200px;
     position: fixed;
@@ -494,12 +497,12 @@ a:focus {
     z-index: 9999;
 }
 
-.nav_container{
+.nav_container {
     height: 100%;
     width: 100%;
 }
 
-.nav_next{
+.nav_next {
     float: left;
     list-style: none;
     height: 80%;
@@ -511,7 +514,7 @@ a:focus {
     cursor: pointer;
 }
 
-.nav_previous{
+.nav_previous {
     float: left;
     list-style: none;
     height: 80%;
@@ -523,23 +526,23 @@ a:focus {
     cursor: pointer;
 }
 
-.nav_previous:hover{
-    transform:scale(1.1);
-    -ms-transform:scale(1.1);/* IE 9 */
-    -moz-transform:scale(1.1);	/* Firefox */
-    -webkit-transform:scale(1.1); /* Safari 和 Chrome */
-    -o-transform:scale(1.1);/* Opera */
+.nav_previous:hover {
+    transform: scale(1.1);
+    -ms-transform: scale(1.1); /* IE 9 */
+    -moz-transform: scale(1.1); /* Firefox */
+    -webkit-transform: scale(1.1); /* Safari 和 Chrome */
+    -o-transform: scale(1.1); /* Opera */
 }
 
-.nav_next:hover{
-    transform:scale(1.1);
-    -ms-transform:scale(1.1);/* IE 9 */
-    -moz-transform:scale(1.1);	/* Firefox */
-    -webkit-transform:scale(1.1); /* Safari 和 Chrome */
-    -o-transform:scale(1.1);/* Opera */
+.nav_next:hover {
+    transform: scale(1.1);
+    -ms-transform: scale(1.1); /* IE 9 */
+    -moz-transform: scale(1.1); /* Firefox */
+    -webkit-transform: scale(1.1); /* Safari 和 Chrome */
+    -o-transform: scale(1.1); /* Opera */
 }
 
-.dot{
+.dot {
 
     float: left;
     height: 80%;
@@ -553,28 +556,28 @@ a:focus {
     background-position-y: center;
     opacity: 0.4;
     cursor: pointer;
-    transform:scale(1);
-    -ms-transform:scale(1);/* IE 9 */
-    -moz-transform:scale(1);	/* Firefox */
-    -webkit-transform:scale(1); /* Safari 和 Chrome */
-    -o-transform:scale(1);/* Opera */
+    transform: scale(1);
+    -ms-transform: scale(1); /* IE 9 */
+    -moz-transform: scale(1); /* Firefox */
+    -webkit-transform: scale(1); /* Safari 和 Chrome */
+    -o-transform: scale(1); /* Opera */
 }
 
-.dot:hover{
-    transform:scale(1.1);
-    -ms-transform:scale(1.1);/* IE 9 */
-    -moz-transform:scale(1.1);	/* Firefox */
-    -webkit-transform:scale(1.1); /* Safari 和 Chrome */
-    -o-transform:scale(1.1);/* Opera */
+.dot:hover {
+    transform: scale(1.1);
+    -ms-transform: scale(1.1); /* IE 9 */
+    -moz-transform: scale(1.1); /* Firefox */
+    -webkit-transform: scale(1.1); /* Safari 和 Chrome */
+    -o-transform: scale(1.1); /* Opera */
     opacity: 1;
 }
 
-.dot_selected{
-    transform:scale(1.1);
-    -ms-transform:scale(1.1);/* IE 9 */
-    -moz-transform:scale(1.1);	/* Firefox */
-    -webkit-transform:scale(1.1); /* Safari 和 Chrome */
-    -o-transform:scale(1.1);/* Opera */
+.dot_selected {
+    transform: scale(1.1);
+    -ms-transform: scale(1.1); /* IE 9 */
+    -moz-transform: scale(1.1); /* Firefox */
+    -webkit-transform: scale(1.1); /* Safari 和 Chrome */
+    -o-transform: scale(1.1); /* Opera */
     opacity: 0.8;
 
 }
@@ -610,53 +613,70 @@ a:focus {
 }
 
 
-html{color:#000;background:#FFF;}
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,
-fieldset,input,textarea,p,blockquote,th,td {
-    margin:0;
-    padding:0;
+html {
+    color: #000;
+    background: #FFF;
 }
-table{
-    border-collapse:collapse;
-    border-spacing:0;
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form,
+fieldset, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
 }
-fieldset,img {
-    border:0;
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
 }
-address,caption,cite,code,dfn,em,strong,th,var {
-    font-style:normal;
-    font-weight:normal;
+
+fieldset, img {
+    border: 0;
 }
-ol,ul {
-    list-style:none;
+
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-style: normal;
+    font-weight: normal;
 }
-caption,th {
-    text-align:left;
+
+ol, ul {
+    list-style: none;
 }
-h1,h2,h3,h4,h5,h6 {
-    font-size:100%;
-    font-weight:normal;
+
+caption, th {
+    text-align: left;
 }
-q:before,q:after {
-    content:'';
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
 }
-abbr,acronym { border:0;
+
+q:before, q:after {
+    content: '';
 }
+
+abbr, acronym {
+    border: 0;
+}
+
 @charset "utf-8";
-*{
+* {
     margin: 0px;
     padding: 0px;
 
 }
-a{
+
+a {
     text-decoration: none;
     color: #000000;
-    font-size:15px;
+    font-size: 15px;
     /*字体*/
 }
-li{
+
+li {
     list-style: none;
 }
-input,img{
+
+input, img {
     border: none;
 }
