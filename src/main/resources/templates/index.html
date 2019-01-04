@@ -69,25 +69,25 @@
                     <input class="header-anchor" name="nav" type="radio" id="tab1" checked>
                     <label class="header-item" for="tab1">登 陆</label>
                     <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-                        <form class="login100-form validate-form">
-                            <span class="login100-form-title p-b-49">注册</span>
-                            <div class="wrap-input100 validate-input" data-validate="请输入账号">
+                        <form class="login100-form validate-form regist-form">
+                            <span class="login100-form-title p-b-49">注 册</span>
+                            <div class="wrap-input100 validate-input regist" data-validate="请输入账号">
                                 <span class="label-input100">账号</span>
-                                <input class="input100" type="text" name="username" placeholder="请输入账号" autocomplete="off">
+                                <input class="input100 registinfo" type="text" name="username" placeholder="请输入账号" autocomplete="off">
                                 <!--<span class="focus-input100" data-symbol="123"></span>-->
                                 <span class="focus-input100" style="background-image: url(icon/account.png);background-repeat: no-repeat;background-size: 24px 24px;background-position-x: 4%;background-position-y: 70%"></span>
                             </div>
 
-                            <div class="wrap-input100 validate-input" data-validate="请输入姓名">
+                            <div class="wrap-input100 validate-input regist" data-validate="请输入姓名">
                                 <span class="label-input100">姓名</span>
-                                <input class="input100" type="text" name="name" placeholder="请输入姓名">
+                                <input class="input100 registinfo" type="text" name="name" placeholder="请输入姓名">
                                 <!--<span class="focus-input100" data-symbol="123"></span>-->
                                 <span class="focus-input100" style="background-image: url(icon/nameicon.png);background-repeat: no-repeat;background-size: 24px 24px;background-position-x: 4%;background-position-y: 70%"></span>
                             </div>
 
-                            <div class="wrap-input100 validate-input" data-validate="请输入密码">
+                            <div class="wrap-input100 validate-input regist" data-validate="请输入密码">
                                 <span class="label-input100">密码</span>
-                                <input class="input100" type="password" name="pass" placeholder="请输入密码">
+                                <input class="input100 registinfo" type="password" name="pass" placeholder="请输入密码">
                                 <!--<span class="focus-input100" data-symbol="123"></span>-->
                                 <span class="focus-input100" style="background-image: url(icon/password.png);background-repeat: no-repeat;background-size: 24px 24px;background-position-x: 4%;background-position-y: 70%"></span>
                             </div>
@@ -104,20 +104,27 @@
                     <input class="header-anchor" name="nav" type="radio" id="tab2">
                     <label class="header-item" for="tab2">注 册</label>
                     <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54" id="regist">
-                        <form class="login100-form validate-form">
-                            <span class="login100-form-title p-b-49">登陆</span>
-                            <div class="wrap-input100 validate-input m-b-23" data-validate="请输入账号">
+                        <form class="login100-form validate-form signin-form">
+                            <span class="login100-form-title p-b-49">登 陆</span>
+                            <div class="wrap-input100 validate-input signin" data-validate="请输入账号">
                                 <span class="label-input100">账号</span>
-                                <input class="input100" type="text" name="username" placeholder="请输入账号" autocomplete="off">
+                                <input class="input100 signinfo" type="text" name="username" placeholder="请输入账号" autocomplete="off">
                                 <!--<span class="focus-input100" data-symbol="123"></span>-->
                                 <span class="focus-input100" style="background-image: url(icon/account.png);background-repeat: no-repeat;background-size: 24px 24px;background-position-x: 4%;background-position-y: 70%"></span>
                             </div>
 
-                            <div class="wrap-input100 validate-input m-b-23" data-validate="请输入密码">
+                            <div class="wrap-input100 validate-input signin" data-validate="请输入密码">
                                 <span class="label-input100">密码</span>
-                                <input class="input100" type="password" name="pass" placeholder="请输入密码">
+                                <input class="input100 signinfo" type="password" name="pass" placeholder="请输入密码">
                                 <!--<span class="focus-input100" data-symbol="123"></span>-->
                                 <span class="focus-input100" style="background-image: url(icon/password.png);background-repeat: no-repeat;background-size: 24px 24px;background-position-x: 4%;background-position-y: 70%"></span>
+                            </div>
+                            <div class="wrap-input100 validate-input signin" data-validate="请输入验证码">
+                                <span class="label-input100">验证码</span>
+                                <img id="verify-code" src="/getImage" onclick="changeImg()" style="position: relative;top: 105px;left: -44px;">
+                                <input class="input100 signinfo" type="password" name="pass" placeholder="请输入验证码">
+                                <!--<span class="focus-input100" data-symbol="123"></span>-->
+                                <span class="focus-input100" style="background-image: url(icon/vcode.png);background-repeat: no-repeat;background-size: 24px 24px;background-position-x: 4%;background-position-y: 70%"></span>
                             </div>
 
                             <div class="text-right p-t-8 p-b-31">
@@ -145,6 +152,28 @@
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/main.js"></script>
 
+<script type="text/javascript">
+    function changeImg(){
+        var img = document.getElementById("verify-code");
+        var url = "/getImage";
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.responseType = "blob";
+        // xhr.setRequestHeader("client_type", "DESKTOP_WEB");
+        // xhr.setRequestHeader("desktop_web_access_key", _desktop_web_access_key);
+        xhr.onload = function() {
+            if (this.status == 200) {
+                var blob = this.response;
+                img.onload = function(e) {
+                    window.URL.revokeObjectURL(img.src);
+                };
+                img.src = window.URL.createObjectURL(blob);
+                // $("#imgcontainer").html(img);
+            }
+        };
+        xhr.send();
+    }
+</script>
 
 </body>
 </html>

@@ -425,7 +425,7 @@ iframe {
 }
 
 .alert-validate::after {
-    content: "\f06a";
+    content: " X";
     font-family: FontAwesome;
     display: block;
     position: absolute;

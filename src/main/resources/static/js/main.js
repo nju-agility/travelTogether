@@ -17,18 +17,29 @@
 
     /*==================================================================
     [ Validate ]*/
-    var input = $('.validate-input .input100');
+    var input1 = $('.signin .signinfo');
+    var input2 = $('.regist .registinfo');
 
-    $('.validate-form').on('submit', function () {
+
+    $('.signin-form').on('submit', function () {
         var check = true;
-
-        for (var i = 0; i < input.length; i++) {
-            if (validate(input[i]) == false) {
-                showValidate(input[i]);
+        for (var i = 0; i < input1.length; i++) {
+            if (validate(input1[i]) == false) {
+                showValidate(input1[i]);
                 check = false;
             }
         }
+        return check;
+    });
 
+    $('.regist-form').on('submit', function () {
+        var check = true;
+        for (var i = 0; i < input2.length; i++) {
+            if (validate(input2[i]) == false) {
+                showValidate(input2[i]);
+                check = false;
+            }
+        }
         return check;
     });
 
