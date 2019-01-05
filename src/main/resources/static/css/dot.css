@@ -1,0 +1,93 @@
+.nav_dot {
+    height: 40px;
+    width: 200px;
+    position: fixed;
+    bottom: 40px;
+    left: 45vw;
+    z-index: 9999;
+}
+
+.nav_container {
+    height: 100%;
+    width: 100%;
+}
+
+.nav_next {
+    float: left;
+    list-style: none;
+    height: 80%;
+    width: 14%;
+    background-image: url(../icon/right_arrow.png);
+    background-size: cover;
+    text-align: center;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.nav_previous {
+    float: left;
+    list-style: none;
+    height: 80%;
+    width: 14%;
+    background-image: url(../icon/left_arrow.png);
+    background-size: cover;
+    text-align: center;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.nav_previous:hover {
+    transform: scale(1.1);
+    -ms-transform: scale(1.1); /* IE 9 */
+    -moz-transform: scale(1.1); /* Firefox */
+    -webkit-transform: scale(1.1); /* Safari 和 Chrome */
+    -o-transform: scale(1.1); /* Opera */
+}
+
+.nav_next:hover {
+    transform: scale(1.1);
+    -ms-transform: scale(1.1); /* IE 9 */
+    -moz-transform: scale(1.1); /* Firefox */
+    -webkit-transform: scale(1.1); /* Safari 和 Chrome */
+    -o-transform: scale(1.1); /* Opera */
+}
+
+.dot {
+
+    float: left;
+    height: 80%;
+    width: 14%;
+    list-style: none;
+    background-image: url(../icon/dot.png);
+    background-size: 60% 60%;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-position-x: center;
+    background-position-y: center;
+    opacity: 0.4;
+    cursor: pointer;
+    transform: scale(1);
+    -ms-transform: scale(1); /* IE 9 */
+    -moz-transform: scale(1); /* Firefox */
+    -webkit-transform: scale(1); /* Safari 和 Chrome */
+    -o-transform: scale(1); /* Opera */
+}
+
+.dot:hover {
+    transform: scale(1.1);
+    -ms-transform: scale(1.1); /* IE 9 */
+    -moz-transform: scale(1.1); /* Firefox */
+    -webkit-transform: scale(1.1); /* Safari 和 Chrome */
+    -o-transform: scale(1.1); /* Opera */
+    opacity: 1;
+}
+
+.dot_selected {
+    transform: scale(1.1);
+    -ms-transform: scale(1.1); /* IE 9 */
+    -moz-transform: scale(1.1); /* Firefox */
+    -webkit-transform: scale(1.1); /* Safari 和 Chrome */
+    -o-transform: scale(1.1); /* Opera */
+    opacity: 0.8;
+
+}
